@@ -1,0 +1,93 @@
+.card {
+    width: 100%;
+    min-width: 20rem;
+    box-sizing: border-box;
+}
+
+.title {
+    margin: 0 0 var(--spacing-comfortable);
+
+    color: var(--ink);
+    font-style: italic;
+
+    font-family: var(--font-heading, Georgia, serif);
+    font-size: var(--text-large);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.notebook {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 8.5rem;
+
+    padding-right: var(--spacing-tight);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        rgb(var(--mist-rgb) / 0.45) transparent;
+}
+
+.noteLine {
+    display: flex;
+    align-items: center;
+
+    flex: 0 0 1.75rem;
+
+    width: 100%;
+}
+
+.hole {
+    flex: 0 0 auto;
+
+    width: 0.42rem;
+    height: 0.42rem;
+
+    margin-right: var(--spacing-tight);
+
+    border-radius: 50%;
+
+    background: var(--canvas);
+
+    box-shadow:
+        inset 0 1px 1px rgb(var(--ink-rgb) / 0.08);
+}
+
+.lineInput {
+    flex: 1;
+
+    width: auto;
+    min-width: 0;
+    min-height: 0;
+
+    height: 100%;
+
+    padding: 0;
+
+    border-radius: 0;
+
+    font-size: var(--text-small);
+}
+
+.lineInput::placeholder {
+    color: var(--mist);
+}
+
+.notebook::-webkit-scrollbar {
+    width: 0.3rem;
+}
+
+.notebook::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.notebook::-webkit-scrollbar-thumb {
+    border-radius: var(--radius-pill);
+    background:
+        rgb(var(--mist-rgb) / 0.4);
+}

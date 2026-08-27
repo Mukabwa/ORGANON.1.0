@@ -1,0 +1,152 @@
+/* ==========================================================
+   ORGANON BUTTON
+   ========================================================== */
+
+.button {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-tight);
+
+    min-height: var(--control-standard);
+
+    padding: 0 var(--spacing-comfortable);
+
+    border: none;
+    outline: none;
+
+    border-radius: var(--radius-pill);
+
+    font: inherit;
+    font-size: var(--text-regular);
+    font-weight: 500;
+    line-height: 1;
+
+    color: var(--text-primary);
+
+    cursor: pointer;
+    user-select: none;
+
+    transition:
+        background .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease,
+        color .25s ease,
+        transform .25s ease;
+
+}
+
+
+/* ==========================================================
+   PRIMARY
+   ========================================================== */
+
+.button-primary {
+
+    background-image:
+        linear-gradient(to bottom,
+            var(--gradient-child));
+
+    box-shadow:
+        var(--shadow-paper);
+
+}
+
+.button-primary:hover {
+
+    transform: translateY(-0.125rem);
+
+    box-shadow:
+        var(--shadow-paper),
+        var(--glow-warm);
+
+}
+
+.button-primary:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* ==========================================================
+   SECONDARY
+   ========================================================== */
+
+.button-secondary {
+
+    background-image:
+        linear-gradient(to bottom,
+            var(--gradient-muted));
+
+    box-shadow:
+        var(--shadow-dream);
+
+}
+
+.button-secondary:hover {
+
+    transform: translateY(-0.0625rem);
+
+    box-shadow:
+        var(--shadow-paper),
+        var(--glow-morning);
+
+}
+
+.button-secondary:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* ==========================================================
+   MUTED
+   ========================================================== */
+
+.button-muted {
+
+    background-image:
+        linear-gradient(to bottom,
+            var(--gradient-paper));
+
+    border:
+        var(--material-paper-border);
+
+    box-shadow:
+        var(--shadow-paper);
+
+}
+
+.button-muted:hover {
+
+    border-color: var(--mist);
+
+    box-shadow: var(--shadow-dream);
+
+}
+
+.button-muted:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* ==========================================================
+   DISABLED
+   ========================================================== */
+
+.button:disabled {
+
+    opacity: .5;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+
+}

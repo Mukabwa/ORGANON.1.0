@@ -1,0 +1,45 @@
+:root {
+
+    /* ==========================================================
+       PIGMENTS
+       ========================================================== */
+
+    --canvas: #FEF3F4;
+    --ink: #572F5C;
+    --mist: #A98FB3;
+    --whisper: #E8E2EE;
+
+    --purple: #DFC4F5;
+    --periwinkle: #DDD0F6;
+    --blush: #F8BDD3;
+    --morning: #FFD1CC;
+
+
+
+    /* ==========================================================
+       RGB VALUES
+       Used for shadows, glows and transparency.
+       ========================================================== */
+
+    --canvas-rgb: 254 243 244;
+    --ink-rgb: 87 47 92;
+    --mist-rgb: 169 143 179;
+    --whisper-rgb: 232 226 238;
+
+    --purple-rgb: 223 196 245;
+    --periwinkle-rgb: 221 208 246;
+    --blush-rgb: 248 189 211;
+    --morning-rgb: 255 209 204;
+
+
+
+    /* ==========================================================
+       TEXT
+       ========================================================== */
+
+    --text-primary: var(--ink);
+    --text-secondary: var(--mist);
+    --text-muted: var(--whisper);
+    --text-accent: var(--blush);
+
+}

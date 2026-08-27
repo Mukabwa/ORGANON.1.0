@@ -1,0 +1,225 @@
+/* ==========================================================
+   ORGANON SWITCH
+   ========================================================== */
+
+.switch {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    cursor: pointer;
+
+    user-select: none;
+
+}
+
+
+/* ==========================================================
+   NATIVE INPUT
+   ========================================================== */
+
+.switch input {
+
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* ==========================================================
+   TRACK
+   ========================================================== */
+
+.track {
+
+    display: block;
+
+    position: relative;
+
+    width: 3.25rem;
+    height: 1.75rem;
+
+    box-sizing: border-box;
+
+    border-radius:
+        var(--radius-pill);
+
+    background-image:
+            linear-gradient(to bottom,
+                var(--gradient-paper));
+
+    box-shadow:
+        inset 0 0.12rem 0.2rem rgb(var(--ink-rgb) / 0.34),
+        inset 0 -0.06rem 0.12rem rgb(var(--mist-rgb) / 0.32);
+
+    transition:
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* ==========================================================
+   STANDARD
+   ========================================================== */
+
+.switch-standard .track {
+
+    border:
+        2px solid var(--ink);
+
+}
+
+
+/* ==========================================================
+   STANDARD — ON
+   ========================================================== */
+
+.switch-standard input:checked+.track {
+
+    background:
+        var(--ink);
+
+}
+
+
+/* ==========================================================
+   GRADIENT
+   ========================================================== */
+
+.switch-gradient .track {
+
+    border:
+        2px solid transparent;
+
+    background:
+
+        linear-gradient(to bottom,
+                var(--gradient-paper)) padding-box,
+
+        linear-gradient(135deg,
+            var(--purple),
+            var(--blush)) border-box;
+
+}
+
+
+/* ==========================================================
+   GRADIENT — ON
+   ========================================================== */
+
+.switch-gradient input:checked+.track {
+
+    background:
+
+        linear-gradient(135deg,
+            var(--purple),
+            var(--blush)) padding-box,
+
+        linear-gradient(135deg,
+            var(--purple),
+            var(--blush)) border-box;
+
+}
+
+
+/* ==========================================================
+   THUMB
+   ========================================================== */
+
+.thumb {
+
+    position: absolute;
+
+    top: 50%;
+    left: 0.125rem;
+
+    width: 1.25rem;
+    height: 1.25rem;
+
+    border-radius:
+        50%;
+
+    background:
+        linear-gradient(to bottom,
+                var(--gradient-paper));
+
+    transform:
+        translateY(-50%);
+
+    box-shadow:
+            var(--shadow-paper);
+
+    transition:
+        left .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+/* ==========================================================
+   CHECKED — THUMB POSITION
+   ========================================================== */
+
+.switch input:checked+.track .thumb {
+
+    left:
+        calc(100% - 1.375rem);
+
+}
+
+
+/* ==========================================================
+   HOVER
+   ========================================================== */
+
+.switch:hover .thumb {
+
+    box-shadow:
+        0 0.15rem 0.3rem rgb(var(--ink-rgb) / 0.20),
+        0 0.35rem 0.65rem rgb(var(--ink-rgb) / 0.14);
+
+}
+
+
+/* ==========================================================
+   FOCUS
+   ========================================================== */
+
+.switch input:focus-visible+.track {
+
+    outline:
+        2px solid rgb(var(--purple-rgb) / .45);
+
+    outline-offset:
+        0.125rem;
+
+}
+
+
+/* ==========================================================
+   DISABLED
+   ========================================================== */
+
+.switch input:disabled+.track {
+
+    opacity:
+        .5;
+
+}
+
+.switch:has(input:disabled) {
+
+    cursor:
+        not-allowed;
+
+}

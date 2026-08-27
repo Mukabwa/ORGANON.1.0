@@ -1,0 +1,296 @@
+/* ==========================================================
+   ORGANON CHECKBOX
+   ========================================================== */
+
+.checkbox {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    cursor: pointer;
+
+    user-select: none;
+
+}
+
+
+/* ==========================================================
+   NATIVE INPUT
+   ========================================================== */
+
+.checkbox input {
+
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* ==========================================================
+   CHECKBOX BOX
+   ========================================================== */
+
+.box {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: var(--control-standard);
+    height: var(--control-standard);
+
+    background: var(--canvas);
+
+    color: var(--canvas);
+
+    transition:
+        border-color .25s ease,
+        background .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+
+}
+
+
+/* ==========================================================
+   STANDARD
+   ========================================================== */
+
+.checkbox-standard .box {
+
+    border:
+        2px solid var(--ink);
+
+    border-radius:
+        var(--radius-soft);
+
+}
+
+
+/* ==========================================================
+   GRADIENT SQUARE
+   ========================================================== */
+
+.checkbox-gradient .box {
+
+    border:
+        2px solid transparent;
+
+    border-radius:
+        var(--radius-soft);
+
+    background:
+
+        linear-gradient(var(--canvas),
+            var(--canvas)) padding-box,
+
+        linear-gradient(135deg,
+            var(--purple),
+            var(--blush)) border-box;
+
+}
+
+
+/* ==========================================================
+   GRADIENT CAPSULE
+   ========================================================== */
+
+.checkbox-capsule .box {
+
+    width:
+        calc(var(--control-standard) * 1.8);
+
+    border:
+        2px solid transparent;
+
+    border-radius:
+        var(--radius-pill);
+
+    background:
+
+        linear-gradient(var(--canvas),
+            var(--canvas)) padding-box,
+
+        linear-gradient(135deg,
+            var(--purple),
+            var(--blush)) border-box;
+
+}
+
+
+/* ==========================================================
+   CHECK
+   ========================================================== */
+
+.check {
+
+    opacity: 0;
+
+    transform:
+        scale(.7);
+
+    color:
+        var(--canvas);
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+
+}
+
+
+/* ==========================================================
+   CHECKED — STANDARD
+   ========================================================== */
+
+.checkbox-standard input:checked+.box {
+
+    background:
+        var(--ink);
+
+    border-color:
+        var(--ink);
+
+}
+
+
+/* ==========================================================
+   CHECKED — GRADIENT
+   ========================================================== */
+
+.checkbox-gradient input:checked+.box,
+.checkbox-capsule input:checked+.box {
+
+    border-color:
+        transparent;
+
+    background:
+        linear-gradient(135deg,
+            var(--purple),
+            var(--blush));
+
+}
+
+
+/* ==========================================================
+   CHECKED CHECKMARK
+   ========================================================== */
+
+.checkbox input:checked+.box .check {
+
+    opacity: 1;
+
+    transform:
+        scale(1);
+
+    color:
+        var(--canvas);
+
+}
+
+
+/* ==========================================================
+   HOVER
+   ========================================================== */
+
+.checkbox:hover .box {
+
+    transform:
+        translateY(-0.0625rem);
+
+}
+
+
+/* ==========================================================
+   FOCUS
+   ========================================================== */
+
+.checkbox input:focus-visible+.box {
+
+    outline:
+        2px solid rgb(var(--purple-rgb) / .45);
+
+    outline-offset:
+        0.125rem;
+
+}
+
+
+/* ==========================================================
+   DISABLED
+   ========================================================== */
+
+.checkbox input:disabled+.box {
+
+    opacity: .5;
+
+    cursor: not-allowed;
+
+}
+
+.checkbox:has(input:disabled) {
+
+    cursor: not-allowed;
+
+}
+
+/* ==========================================================
+   CIRCLE — X
+   ========================================================== */
+
+.checkbox-circle-x .box {
+
+    width: var(--control-standard);
+    height: var(--control-standard);
+
+    border:
+        2px solid var(--ink);
+
+    border-radius: 50%;
+
+    background:
+        var(--canvas);
+
+}
+
+
+/* ==========================================================
+   CIRCLE — X CHECKED
+   ========================================================== */
+
+.checkbox-circle-x input:checked+.box {
+
+    background:
+        var(--ink);
+
+    border-color:
+        var(--ink);
+
+}
+
+
+/* ==========================================================
+   CIRCLE — X MARK
+   ========================================================== */
+
+.checkbox-circle-x input:checked+.box .check {
+
+    opacity: 1;
+
+    transform:
+        scale(1);
+
+    color:
+        var(--canvas);
+}

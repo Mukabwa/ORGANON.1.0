@@ -1,0 +1,26 @@
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .mobileNav {
+    position: fixed;
+    left: var(--spacing-comfortable);
+    right: var(--spacing-comfortable);
+    bottom: var(--spacing-comfortable);
+    z-index: 20;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: var(--spacing-tight);
+
+    padding: var(--spacing-tight);
+    box-sizing: border-box;
+
+    border-radius: var(--radius-soft);
+    background: rgb(var(--canvas-rgb) / 0.86);
+    border: 1px solid rgb(var(--whisper-rgb) / 0.65);
+    box-shadow: var(--shadow-dream);
+    backdrop-filter: blur(12px);
+  }
+}

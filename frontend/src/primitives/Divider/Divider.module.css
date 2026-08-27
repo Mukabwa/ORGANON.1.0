@@ -1,0 +1,247 @@
+/* ==========================================================
+   ORGANON DIVIDER
+   ========================================================== */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color:
+        var(--ink);
+
+}
+
+
+/* ==========================================================
+   HORIZONTAL
+   ========================================================== */
+
+.divider-horizontal {
+
+    width: 30%;
+
+    min-height: 1px;
+
+}
+
+
+/* ==========================================================
+   VERTICAL
+   ========================================================== */
+
+.divider-vertical {
+    flex-direction: column;
+    min-width: 1px;
+}
+
+
+/* ==========================================================
+   LINE
+   ========================================================== */
+
+.line {
+
+    display: block;
+
+    background:
+        var(--ink);
+
+}
+
+
+/* ==========================================================
+   FADE
+   ========================================================== */
+
+.divider-fade.divider-horizontal .line {
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(to right,
+            transparent,
+            var(--ink),
+            transparent);
+
+}
+
+
+.divider-fade.divider-vertical .line {
+
+    width: 1px;
+
+    height: 100%;
+
+    background:
+        linear-gradient(to bottom,
+            transparent,
+            var(--ink),
+            transparent);
+
+}
+
+
+/* ==========================================================
+   ORNAMENT
+   ========================================================== */
+
+.divider-ornament.divider-horizontal {
+
+    gap:
+        var(--spacing-small);
+
+}
+
+
+.divider-ornament.divider-vertical {
+
+    gap:
+        var(--spacing-small);
+
+}
+
+
+/* LEFT */
+
+.divider-ornament.divider-horizontal .line:first-child {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(to right,
+            transparent,
+            var(--ink) 50%,
+            transparent);
+
+}
+
+
+/* RIGHT */
+
+.divider-ornament.divider-horizontal .line:last-child {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(to right,
+            transparent,
+            var(--ink) 50%,
+            transparent);
+
+}
+
+
+/* VERTICAL — TOP */
+
+.divider-ornament.divider-vertical .line:first-child {
+
+    flex: 1;
+
+    width: 1px;
+
+    background:
+        linear-gradient(to bottom,
+            transparent,
+            var(--ink) 50%,
+            transparent);
+
+}
+
+
+/* VERTICAL — BOTTOM */
+
+.divider-ornament.divider-vertical .line:last-child {
+
+    flex: 1;
+
+    width: 1px;
+
+    background:
+        linear-gradient(to bottom,
+            transparent,
+            var(--ink) 50%,
+            transparent);
+
+}
+
+
+.ornament {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color:
+        var(--ink);
+
+}
+
+
+/* ==========================================================
+   TRAIL
+   ========================================================== */
+
+.divider-trail.divider-horizontal {
+
+    gap:
+        var(--spacing-small);
+
+}
+
+
+.divider-trail.divider-vertical {
+
+    gap:
+        var(--spacing-small);
+
+}
+
+
+/* ==========================================================
+   TRAIL — HORIZONTAL
+   ========================================================== */
+
+.divider-trail.divider-horizontal .line {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(to right,
+            transparent,
+            var(--ink) 50%,
+            transparent);
+
+}
+
+
+/* ==========================================================
+   TRAIL — VERTICAL
+   ========================================================== */
+
+.divider-trail.divider-vertical .line {
+
+    flex: 1;
+
+    width: 1px;
+
+    background:
+        linear-gradient(to bottom,
+            transparent,
+            var(--ink) 50%,
+            transparent);
+
+}

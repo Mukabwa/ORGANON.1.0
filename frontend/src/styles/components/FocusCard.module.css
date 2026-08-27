@@ -1,0 +1,125 @@
+.card {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-comfortable);
+}
+
+.title {
+    margin: 0;
+
+    color: var(--ink);
+
+    font-family: var(--font-heading, Georgia, serif);
+    font-size: var(--text-large);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.progress {
+    position: relative;
+    flex: 0 0 auto;
+
+    width: 5rem;
+    height: 5rem;
+}
+
+.progress> :first-child {
+    width: 100%;
+    height: 100%;
+}
+
+.progressLabel {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--ink);
+
+    text-align: center;
+    line-height: 1.05;
+
+    pointer-events: none;
+}
+
+.progressLabel strong {
+    font-size: var(--text-large);
+    font-weight: 700;
+}
+
+.progressLabel span {
+    font-size: 0.58rem;
+    font-weight: 500;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-tight);
+
+    margin: var(--spacing-comfortable) 0 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-tight);
+
+    min-width: 0;
+
+    color: var(--ink);
+    font-size: var(--text-small);
+}
+
+.indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    width: 1.1rem;
+    height: 1.1rem;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgb(var(--mist-rgb) / 0.65);
+
+    border-radius: 50%;
+
+    color: var(--ink);
+    font-size: 0.68rem;
+}
+
+.completed .indicator {
+    border-color:
+        rgb(var(--purple-rgb) / 0.55);
+
+    background:
+        rgb(var(--blush-rgb) / 0.28);
+}
+
+.itemTitle {
+    min-width: 0;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.completed .itemTitle {
+    color: var(--text-secondary);
+    text-decoration: line-through;
+}

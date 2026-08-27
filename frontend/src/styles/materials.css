@@ -1,0 +1,38 @@
+/* ==========================================================
+   ORGANON MATERIALS
+   Physical surface recipes.
+   ========================================================== */
+
+:root {
+
+    /* ======================================================
+       PAPER
+       Interactive, tactile surface.
+       ====================================================== */
+
+    --material-paper-texture: url("textures/paper.png");
+    --material-paper-shadow: var(--shadow-paper);
+    --material-paper-border: 1px solid rgb(var(--whisper-rgb) / 0.6);
+
+
+
+    /* ======================================================
+       GLASS
+       Floating decorative surface.
+       ====================================================== */
+
+    --material-glass-shadow: var(--shadow-dream);
+    --material-glass-border: 1px solid rgb(var(--canvas-rgb) / 0.35);
+    --material-glass-blur: blur(12px);
+
+
+
+    /* ======================================================
+       MATTE
+       Quiet grouping surface.
+       ====================================================== */
+
+    --material-matte-shadow: var(--shadow-paper);
+    --material-matte-border: 1px solid rgb(var(--whisper-rgb) / 0.35);
+
+}

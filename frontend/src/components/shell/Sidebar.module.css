@@ -1,0 +1,245 @@
+.sidebar {
+  width: 90%;
+  height: 100vh;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-relaxed);
+
+  /* Intentionally no top padding:
+     the Organon identity begins at the very top. */
+  padding: 0 var(--spacing-comfortable) var(--spacing-relaxed);
+  box-sizing: border-box;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgb(var(--canvas-rgb) / 0.78),
+      rgb(var(--whisper-rgb) / 0.38)
+    );
+
+  border-right: 1px solid rgb(var(--whisper-rgb) / 0.55);
+  box-shadow: var(--shadow-paper);
+  backdrop-filter: blur(10px);
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgb(var(--mist-rgb) / 0.45)
+    transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgb(var(--mist-rgb) / 0.45);
+}
+
+/* ==========================================================
+   ORGANON IDENTITY
+   ========================================================== */
+
+.identity {
+  flex-shrink: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.wordmark {
+  color: var(--ink);
+  font-family: var(--font-heading, Georgia, serif);
+  font-style: italic;
+  
+  font-size: var(--text-xl);
+  line-height: 1;
+}
+
+.tagline {
+  margin: var(--spacing-tight) auto 0;
+  max-width: 12rem;
+  color: var(--text-secondary);
+  font-size: var(--text-tiny);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ==========================================================
+   NAVIGATION
+   ========================================================== */
+
+.navigation {
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+}
+
+.navLink {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+
+  padding: var(--spacing-comfortable) var(--spacing-tight);
+
+  border-radius: var(--radius-soft);
+
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.navLink:hover {
+  background:
+      linear-gradient(90deg,
+        rgb(var(--purple-rgb) / 0.22),
+        rgb(var(--blush-rgb) / 0.26));
+}
+
+.navLink.active {
+  background:
+    linear-gradient(90deg,
+      rgb(var(--purple-rgb) / 0.12),
+      rgb(var(--blush-rgb) / 0.16));
+
+  box-shadow:
+    0 0 0 1px rgb(var(--purple-rgb) / 0.72),
+    0 0 14px rgb(var(--blush-rgb) / 0.38),
+    0 0 24px rgb(var(--purple-rgb) / 0.18);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid rgb(var(--purple-rgb) / 0.62);
+
+  outline-offset: -2px;
+}
+
+.navContent {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-tight);
+
+  font-size: var(--text-small);
+  font-weight: 500;
+}
+
+/* ==========================================================
+   USER BRANDING + LOGOUT
+   ========================================================== */
+
+.userArea {
+  margin-top: auto;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-comfortable);
+
+  padding-top: var(--spacing-relaxed);
+}
+
+.userIdentity {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-tight);
+
+  text-align: center;
+}
+
+.userIdentity strong {
+  color: var(--ink);
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: var(--text-regular);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.userIdentity span {
+  color: var(--text-secondary);
+  font-size: var(--text-tiny);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/*
+  The Button primitive still owns the actual primary-button
+  appearance. Shell CSS only controls its proportion and placement.
+*/
+.logout {
+  width: 45%;
+  min-height: var(--control-compact);
+  padding: 0 var(--spacing-comfortable);
+  font-size: var(--text-small);
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   COMPACT SIDEBAR
+   ========================================================== */
+
+@media (max-width: 900px) {
+  .sidebar {
+    padding-left: var(--spacing-tight);
+    padding-right: var(--spacing-tight);
+  }
+
+  .identity,
+  .userIdentity {
+    display: none;
+  }
+
+  .navCard {
+    justify-content: center;
+    padding: var(--spacing-tight);
+  }
+
+  .navContent {
+    justify-content: center;
+  }
+
+  .navContent > span:last-child {
+    display: none;
+  }
+
+  .userArea {
+    padding-top: var(--spacing-tight);
+  }
+
+  .logout {
+    width: 100%;
+    padding: 0;
+  }
+
+  .logout > span:last-child {
+    display: none;
+  }
+}
+
+.identityDivider {
+  width: 85%;
+  margin: var(--spacing-comfortable) auto 0;
+}
+
+.userDivider {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    display: none;
+  }
+}

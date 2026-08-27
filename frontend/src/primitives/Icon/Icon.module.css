@@ -1,0 +1,86 @@
+/* ==========================================================
+   ORGANON ICON
+   ========================================================== */
+
+.icon {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    line-height: 0;
+
+}
+
+
+/* ==========================================================
+   STANDARD
+   ========================================================== */
+
+.icon-standard {
+
+    color: var(--ink);
+
+}
+
+
+/* ==========================================================
+   GRADIENT
+   ========================================================== */
+
+.icon-gradient {
+
+    color: var(--purple);
+
+}
+
+
+/* ==========================================================
+   CAPSULE
+   ========================================================== */
+
+.icon-capsule {
+
+    min-width: var(--control-standard);
+    min-height: var(--control-standard);
+
+    padding: var(--spacing-tight);
+
+    border-radius: var(--radius-pill);
+
+    background:
+
+        linear-gradient(to bottom,
+            var(--gradient-muted));
+
+    box-shadow:
+        var(--shadow-paper);
+
+    color: var(--ink);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.icon-capsule:hover {
+
+    transform:
+        translateY(-0.0625rem);
+
+    box-shadow:
+        var(--shadow-paper),
+        var(--glow-warm);
+
+}
+
+.icon-capsule:active {
+
+    transform:
+        translateY(0);
+
+}

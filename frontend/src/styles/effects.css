@@ -1,0 +1,55 @@
+/* ==========================================================
+   ORGANON EFFECTS
+   Shadows & Glows
+   ========================================================== */
+
+:root {
+
+    /* ======================================================
+       SHADOW LANGUAGE
+       Shadows are coloured light, not black.
+       ====================================================== */
+
+    /* Ink */
+    --shadow-paper:
+        0 0.125rem 0.25rem rgb(var(--ink-rgb) / 0.15),
+        0 0.5rem 1rem rgb(var(--ink-rgb) / 0.12);
+
+    /* Ink → Periwinkle */
+    --shadow-dream:
+        0 0.25rem 0.75rem rgb(var(--ink-rgb) / 0.18),
+        0 0.75rem 1.5rem rgb(var(--periwinkle-rgb) / 0.32);
+
+    /* Ink → Blush */
+    --shadow-warm:
+        0 0.25rem 0.75rem rgb(var(--ink-rgb) / 0.18),
+        0 0.75rem 1.5rem rgb(var(--blush-rgb) / 0.32);
+
+    /* Ink → Purple */
+    --shadow-magic:
+        0 0.25rem 0.75rem rgb(var(--ink-rgb) / 0.08),
+        0 0.75rem 1.5rem rgb(var(--purple-rgb) / 0.28);
+
+
+
+    /* ======================================================
+       GLOW LANGUAGE
+       Glows represent emotion and interaction.
+       ====================================================== */
+
+    /* Purple → Blush */
+    --glow-magic:
+        0 0 1rem rgb(var(--purple-rgb) / 0.45),
+        0 0 2rem rgb(var(--blush-rgb) / 0.35);
+
+    /* Blush */
+    --glow-warm:
+        0 0 1rem rgb(var(--blush-rgb) / 0.40),
+        0 0 2rem rgb(var(--blush-rgb) / 0.20);
+
+    /* Blush → Morning Light */
+    --glow-morning:
+        0 0 1rem rgb(var(--blush-rgb) / 0.30),
+        0 0 2rem rgb(var(--morning-rgb) / 0.35);
+
+}

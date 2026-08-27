@@ -1,0 +1,70 @@
+:root {
+
+    /* Paper */
+
+    --gradient-paper:
+        var(--canvas),
+        var(--whisper),
+        var(--canvas);
+
+
+    --gradient-card-paper:
+        rgb(var(--canvas-rgb) /0.80) 0%,
+        rgb(var(--whisper-rgb) /0.60) 55%;
+
+    /* Child Surface */
+
+    --gradient-child:
+        var(--canvas),
+        var(--purple),
+        var(--blush);
+
+    --gradient-progress:
+            var(--purple),
+            var(--canvas),
+            var(--blush),
+            var(--purple),
+                var(--canvas),
+                var(--blush),
+                var(--purple),
+                    var(--canvas),
+                    var(--blush),
+                    var(--purple),
+                        var(--canvas),
+                        var(--blush),
+                        var(--purple),
+                        var(--canvas),
+                        var(--blush);
+
+    --gradient-card-child:
+            rgb(var(--canvas-rgb) /0.30),
+            rgb(var(--purple-rgb) /0.30),
+            rgb(var(--blush-rgb) / 0.30),
+            rgb(var(--periwinkle-rgb) /0.30);
+
+    /* Primary */
+
+    --gradient-primary:
+        var(--purple),
+        var(--blush);
+
+    /* Secondary */
+
+    --gradient-secondary:
+        var(--mist),
+        var(--blush);
+
+    /* Quiet */
+
+    --gradient-muted:
+        var(--canvas),
+        var(--whisper),
+        var(--blush);
+
+    /* Icons */
+
+    --gradient-icon:
+        var(--ink),
+        var(--blush);
+
+}

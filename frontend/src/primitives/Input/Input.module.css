@@ -1,0 +1,149 @@
+/* ==========================================================
+   ORGANON INPUT
+   ========================================================== */
+
+.input {
+
+    width: 100%;
+
+    min-height: var(--control-standard);
+
+    padding:
+        0 var(--spacing-comfortable);
+
+    border: none;
+    outline: none;
+
+    border-radius: var(--radius-pill);
+
+    font: inherit;
+    font-size: var(--text-regular);
+
+    color: var(--text-primary);
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease,
+        transform .25s ease;
+
+}
+
+.input::placeholder {
+
+    color: var(--text-secondary);
+
+}
+
+/* ==========================================================
+   STANDARD
+   ========================================================== */
+
+.input-standard {
+
+    background:
+        linear-gradient(to bottom,
+            var(--gradient-card-paper));
+
+    
+        
+
+    box-shadow:
+        var(--shadow-soft);
+
+}
+
+.input-standard:hover {
+
+    border-color:
+        var(--mist);
+
+}
+
+.input-standard:focus {
+
+    border-color:
+        var(--purple);
+
+}
+
+/* ==========================================================
+   FILLED
+   ========================================================== */
+
+.input-filled {
+
+    background:
+        linear-gradient(to bottom,
+            var(--gradient-card-paper));
+
+    border-style: double;
+
+    border: 5px solid rgb(var(--canvas-rgb) / .45);
+    border-color: rgb(var(--canvas-rgb));
+    box-shadow:
+        var(--shadow-soft);
+
+}
+
+.input-filled:hover {
+
+    border-color:
+        rgb(var(--whisper-rgb)/ .55);
+
+}
+
+.input-filled:focus {
+
+    border-color:
+            rgb(var(--whisper-rgb)/ .45);
+
+}
+
+/* ==========================================================
+   DOTTED
+   ========================================================== */
+
+.input-dotted {
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom:
+
+        2px dotted rgb(var(--mist-rgb));
+
+    border-radius: 0;
+
+    padding-inline: 0;
+
+    box-shadow: none;
+
+}
+
+.input-dotted:hover {
+
+    border-bottom-color:
+        rgb(var(--ink-rgb) / .55);
+
+}
+
+.input-dotted:focus {
+
+    border-bottom-color:
+        var(--purple);
+
+}
+
+/* ==========================================================
+   DISABLED
+   ========================================================== */
+
+.input:disabled {
+
+    opacity: .5;
+
+    cursor: not-allowed;
+
+}

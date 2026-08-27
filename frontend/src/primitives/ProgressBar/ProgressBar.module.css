@@ -1,0 +1,304 @@
+/* ==========================================================
+   ORGANON PROGRESS BAR
+   ========================================================== */
+
+.progress {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+/* ==========================================================
+   STRAIGHT
+   ========================================================== */
+
+.progress-straight {
+
+    width: 50%;
+
+}
+
+
+/* ==========================================================
+   TRACK
+   ========================================================== */
+
+.track {
+
+    position: relative;
+
+    width: 80%;
+    height: 30px;
+
+    overflow: hidden;
+
+    border-radius:
+        var(--radius-pill);
+
+    background-image:
+        linear-gradient(to bottom,
+            rgb(var(--purple-rgb) / .38),
+            rgb(var(--blush-rgb) / .38));
+
+    box-shadow:
+        var(--shadow-paper);
+
+}
+
+
+/* ==========================================================
+   FILL
+   ========================================================== */
+
+.fill {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+
+    border-radius:
+        var(--radius-pill);
+
+    background-image:
+        linear-gradient(to bottom,
+            var(--gradient-child));
+
+    box-shadow:
+        var(--shadow-paper);
+
+    transition:
+        width .25s ease;
+
+}
+
+
+/* ==========================================================
+   CIRCLE
+   ========================================================== */
+
+.progress-circle {
+
+    width: 5rem;
+    height: 5rem;
+
+}
+
+
+/* ==========================================================
+   CIRCLE — CONTAINER
+   ========================================================== */
+
+/* ==========================================================
+   CIRCLE — CONTAINER
+   ========================================================== */
+
+.circle {
+
+    position: relative;
+
+    width: 5rem;
+    height: 5rem;
+
+}
+
+
+/* ==========================================================
+   CIRCLE — INNER SHADOW
+   ========================================================== */
+
+
+
+
+/* ==========================================================
+   CIRCLE — TRACK
+   ========================================================== */
+
+.circleTrack {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    background-image:
+        linear-gradient(to bottom,
+            rgb(var(--purple-rgb) / .38),
+            rgb(var(--blush-rgb) / .38));
+
+    box-shadow:
+        var(--shadow-paper);
+
+    /*
+        Cut out the center.
+    */
+
+    -webkit-mask:
+        radial-gradient(circle,
+            transparent 0 58%,
+            #000 59%);
+
+    mask:
+        radial-gradient(circle,
+            transparent 0 58%,
+            #000 59%);
+
+}
+
+
+/* ==========================================================
+   CIRCLE — FILL
+   ========================================================== */
+
+.circleFill {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    background-image:
+        radial-gradient(var(--gradient-progress));
+
+    box-shadow:
+        var(--shadow-paper);
+
+    /*
+        Make this layer a ring.
+    */
+
+    -webkit-mask:
+        radial-gradient(circle,
+            transparent 0 58%,
+            #000 59%),
+        conic-gradient(from -90deg,
+            #000 0 var(--progress),
+            transparent var(--progress) 100%);
+
+    -webkit-mask-composite:
+        source-in;
+
+    mask:
+        radial-gradient(circle,
+            transparent 0 58%,
+            #000 59%),
+        conic-gradient(from -90deg,
+            #000 0 var(--progress),
+            transparent var(--progress) 100%);
+
+    mask-composite:
+        intersect;
+
+}
+
+/* ==========================================================
+   ICON
+   ========================================================== */
+
+.progress-icon {
+
+    width: 5rem;
+    height: 5rem;
+
+}
+
+
+/* ==========================================================
+   ICON — CONTAINER
+   ========================================================== */
+
+.iconProgress {
+
+    position: relative;
+
+    width: 4rem;
+    height: 4.5rem;
+
+}
+
+
+/* ==========================================================
+   ICON — TRACK
+   ========================================================== */
+
+.iconTrack {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    border-radius:
+        50% 50% 50% 50% / 42% 42% 58% 58%;
+
+    background-image:
+        linear-gradient(to bottom,
+            rgb(var(--whisper-rgb) / .38),
+            rgb(var(--blush-rgb) / .18));
+
+    box-shadow:
+        var(--shadow-paper);
+
+}
+
+
+/* ==========================================================
+   ICON — FILL
+   ========================================================== */
+
+.iconFill {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: var(--progress);
+
+    border-radius:
+        50% 50% 50% 50% / 42% 42% 58% 58%;
+
+    background-image:
+        linear-gradient(to bottom,
+            var(--gradient-child));
+
+    box-shadow:
+        var(--shadow-paper);
+
+    transition:
+        height .25s ease;
+
+}
+
+/* ==========================================================
+   ICON — CONTAINER
+   ========================================================== */
+
+
+.iconProgress::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    border-radius:
+        50% 50% 50% 50% / 42% 42% 58% 58%;
+
+    box-shadow:
+        inset 0 -0.125rem 0.3rem rgb(var(--ink-rgb) / .22);
+
+}

@@ -1,0 +1,36 @@
+.playground {
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-loose);
+
+    padding: var(--spacing-roomy);
+
+}
+
+.section {
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-comfortable);
+
+}
+
+.row {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-comfortable);
+
+}
+
+.dividerVerticalTest {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 4rem;
+
+    height: 12rem;
+}

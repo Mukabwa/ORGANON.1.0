@@ -1,0 +1,98 @@
+.timeline {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.row {
+    display: grid;
+    grid-template-columns:
+        5rem 2rem minmax(0, 1fr);
+
+    width: 100%;
+    min-height: 8rem;
+}
+
+.time {
+    align-self: center;
+    justify-self: end;
+
+    padding-right: var(--spacing-tight);
+
+    color: var(--ink);
+
+    font-size: var(--text-small);
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.marker {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+}
+
+/* Faded timeline segment */
+.marker::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    left: 50%;
+
+    width: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(to bottom,
+            transparent,
+            var(--ink) 50%,
+            transparent);
+}
+
+.markerDot {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 0.7rem;
+    height: 0.7rem;
+
+    border: 1px solid var(--mist);
+    border-radius: 50%;
+
+    background: var(--canvas);
+
+    color: var(--ink);
+}
+
+.item {
+    align-self: center;
+
+    min-width: 0;
+
+    padding-left: var(--spacing-comfortable);
+}
+
+.placeholder {
+    display: flex;
+    align-items: center;
+
+    padding-block: var(--spacing-comfortable);
+
+    color: var(--mist);
+
+    font-size: var(--text-small);
+}

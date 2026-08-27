@@ -1,0 +1,26 @@
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(15rem, 20rem);
+    gap: var(--spacing-relaxed);
+
+    width: 100%;
+    min-width: 0;
+}
+
+.main {
+    min-width: 0;
+}
+
+.sidebar {
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        order: 2;
+    }
+}
