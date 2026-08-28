@@ -1,0 +1,517 @@
+/* ==========================================================
+   ORGANON REGISTER PAGE
+   ========================================================== */
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: grid;
+    grid-template-columns:
+        minmax(18rem, 0.85fr) minmax(30rem, 1fr);
+
+    align-items: center;
+
+    gap: clamp(2rem,
+            5vw,
+            6rem);
+
+    padding:
+        clamp(2rem, 5vh, 4rem) clamp(2rem, 6vw, 7rem);
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 18% 30%,
+            rgb(var(--blush-rgb) / 0.24),
+            transparent 34%),
+        radial-gradient(circle at 82% 72%,
+            rgb(var(--purple-rgb) / 0.24),
+            transparent 36%),
+        var(--canvas);
+}
+
+/* ==========================================================
+   INTRODUCTION
+   ========================================================== */
+
+.intro {
+    width: min(100%, 28rem);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-self: center;
+
+    text-align: center;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand h1 {
+    margin: 0;
+
+    color: var(--ink);
+
+    font-family:
+        var(--font-heading),
+        Georgia,
+        serif;
+
+    font-size: clamp(3.5rem,
+            6vw,
+            5.5rem);
+
+    font-style: italic;
+    font-weight: 500;
+    line-height: 0.95;
+}
+
+.brand p {
+    margin:
+        var(--spacing-tight) 0 0;
+
+    color: var(--text-secondary);
+
+    font-family:
+        var(--font-heading),
+        Georgia,
+        serif;
+
+    font-size: var(--text-regular);
+
+    font-style: italic;
+}
+
+/* ==========================================================
+   DIVIDER
+   ========================================================== */
+
+.divider {
+    width: min(100%, 24rem);
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    margin:
+        var(--spacing-relaxed) 0;
+}
+
+.divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(to right,
+            transparent,
+            rgb(var(--mist-rgb) / 0.55));
+}
+
+.divider span:last-child {
+    background:
+        linear-gradient(to left,
+            transparent,
+            rgb(var(--mist-rgb) / 0.55));
+}
+
+.divider i {
+    flex-shrink: 0;
+
+    color: var(--purple);
+
+    font-size: 0.9rem;
+
+    font-style: normal;
+}
+
+/* ==========================================================
+   INVITATION
+   ========================================================== */
+
+.invitation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 20rem;
+}
+
+.eyebrow {
+    margin: 0;
+
+    color: var(--ink);
+
+    font-size: var(--text-tiny);
+    font-weight: 600;
+
+    letter-spacing: 0.2em;
+}
+
+.instruction {
+    margin:
+        var(--spacing-comfortable) 0 0;
+
+    color: var(--ink);
+
+    font-family:
+        var(--font-heading),
+        Georgia,
+        serif;
+
+    font-size: clamp(1.25rem,
+            2vw,
+            1.65rem);
+
+    line-height: 1.45;
+}
+
+/* ==========================================================
+   QUOTE
+   ========================================================== */
+
+.quote {
+    margin:
+        clamp(3rem, 8vh, 6rem) 0 0;
+
+    color: var(--text-secondary);
+
+    font-family:
+        var(--font-heading),
+        Georgia,
+        serif;
+
+    font-size: var(--text-small);
+
+    font-style: italic;
+
+    line-height: 1.5;
+}
+
+/* ==========================================================
+   FORM SECTION
+   ========================================================== */
+
+.formSection {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================================
+   CIRCULAR STANDARD CARD
+   ========================================================== */
+
+.card {
+    /*
+     * Width and height always use the same value,
+     * so this remains a true circle.
+     *
+     * 34rem = desktop ceiling
+     * 44vw  = responsive desktop scaling
+     * 78vh  = protects short screens
+     */
+
+    width: min(34rem,
+            44vw,
+            78vh);
+
+    height: min(34rem,
+            44vw,
+            78vh);
+
+    min-width: 0;
+    min-height: 0;
+
+    flex-shrink: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: clamp(2.5rem,
+            5vw,
+            4rem);
+
+    box-sizing: border-box;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+
+/* ==========================================================
+   FORM CONTENT
+   ========================================================== */
+
+.formContent {
+    width: min(72%,
+            22rem);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    text-align: center;
+}
+
+/* ==========================================================
+   FORM HEADER
+   ========================================================== */
+
+.header {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 1.25rem;
+}
+
+.formEyebrow {
+    margin: 0;
+
+    color: var(--ink);
+
+    font-size: var(--text-tiny);
+    font-weight: 600;
+
+    letter-spacing: 0.2em;
+}
+
+/* ==========================================================
+   FORM
+   ========================================================== */
+
+.form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.6rem;
+}
+
+.form input {
+    width: 100%;
+
+    height: 2.35rem;
+    min-height: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-size: var(--text-small);
+}
+
+/* ==========================================================
+   SUBMIT
+   ========================================================== */
+
+.submit {
+    width: 100%;
+
+    margin-top: 0.5rem;
+}
+
+/* ==========================================================
+   LOGIN
+   ========================================================== */
+
+.loginPrompt {
+    margin:
+        1rem 0 0;
+
+    color: var(--text-secondary);
+
+    font-size: var(--text-tiny);
+
+    line-height: 1.5;
+}
+
+.loginPrompt a {
+    color: var(--ink);
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 180ms ease;
+}
+
+.loginPrompt a:hover {
+    color: var(--purple);
+}
+
+.loginPrompt a:focus-visible {
+    outline:
+        2px solid rgb(var(--purple-rgb) / 0.65);
+
+    outline-offset: 0.15rem;
+
+    border-radius: 0.15rem;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+    .page {
+        grid-template-columns: 1fr;
+
+        gap: 2.5rem;
+
+        padding:
+            3rem var(--spacing-comfortable);
+    }
+
+    .intro {
+        width: min(100%,
+                30rem);
+    }
+
+    .quote {
+        margin-top: 2.5rem;
+    }
+
+    .card {
+        width: min(34rem,
+                76vw,
+                76vh);
+
+        height: min(34rem,
+                76vw,
+                76vh);
+    }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 640px) {
+    .page {
+        gap: 2rem;
+
+        padding:
+            2rem 1rem 2.5rem;
+    }
+
+    .brand h1 {
+        font-size: 3.25rem;
+    }
+
+    .brand p {
+        font-size: var(--text-small);
+    }
+
+    .divider {
+        margin:
+            var(--spacing-comfortable) 0;
+    }
+
+    .invitation {
+        max-width: 18rem;
+    }
+
+    .instruction {
+        margin-top: 0.75rem;
+
+        font-size: 1.15rem;
+    }
+
+    .quote {
+        margin-top: 2rem;
+
+        font-size: var(--text-tiny);
+    }
+
+    .card {
+        width: min(92vw,
+                28rem);
+
+        height: min(92vw,
+                28rem);
+
+        padding: 2.25rem;
+    }
+
+    .formContent {
+        width: 72%;
+    }
+
+    .formEyebrow {
+        letter-spacing: 0.16em;
+    }
+
+    .form input {
+        height: 2.25rem;
+
+        font-size: var(--text-tiny);
+    }
+
+    .submit {
+        margin-top: 0.4rem;
+    }
+}
+
+/* ==========================================================
+   VERY SMALL PHONES
+   ========================================================== */
+
+@media (max-width: 380px) {
+    .page {
+        padding:
+            1.5rem 0.75rem 2rem;
+    }
+
+    .brand h1 {
+        font-size: 2.8rem;
+    }
+
+    .card {
+        width: 94vw;
+        height: 94vw;
+
+        padding: 1.75rem;
+    }
+
+    .formContent {
+        width: 76%;
+    }
+
+    .form {
+        gap: 0.45rem;
+    }
+
+    .form input {
+        height: 2.1rem;
+    }
+
+    .loginPrompt {
+        margin-top: 0.75rem;
+    }
+}
+
+.error {
+    margin: 0;
+
+    color: var(--ink);
+
+    font-size: var(--text-tiny);
+    line-height: 1.4;
+
+    text-align: center;
+}

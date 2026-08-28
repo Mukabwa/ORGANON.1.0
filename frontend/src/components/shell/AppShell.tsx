@@ -1,30 +1,59 @@
+"use client";
+
 import React from "react";
+
+import { useRouter } from "next/navigation";
+
 import Sidebar from "./Sidebar";
 import MobileNav from "./MobileNav";
+
+import { useAuth } from "../../context/AuthContext";
+
 import styles from "./AppShell.module.css";
 
 interface AppShellProps {
   children: React.ReactNode;
-  userName?: string;
-  userQuote?: string;
-  onLogout?: () => void;
 }
 
 export default function AppShell({
   children,
-  userName,
-  userQuote,
-  onLogout,
 }: AppShellProps) {
+  const router = useRouter();
+
+  const {
+    user,
+    logout,
+  } = useAuth();
+
+  const [displayName, setDisplayName] =
+    React.useState(user?.name ?? "User");
+
+  React.useEffect(() => {
+    if (user?.name) {
+      setDisplayName(user.name);
+    }
+  }, [user]);
+
+  const handleLogout = () => {
+    logout();
+    router.push("/login");
+  };
+
   return (
     <div className={styles.shell}>
       <Sidebar
-        userName={userName}
-        userQuote={userQuote}
-        onLogout={onLogout}
+        userName={displayName}
+        onLogout={handleLogout}
       />
 
-      <main className={styles.content}>{children}</main>
+      <main className={styles.content}>
+        <div
+          className={styles.profileSection}
+          aria-hidden="true"
+        />
+
+        {children}
+      </main>
 
       <MobileNav />
     </div>
