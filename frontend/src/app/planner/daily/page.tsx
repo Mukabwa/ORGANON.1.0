@@ -102,28 +102,7 @@ export default function DailyPlannerPage() {
 
                     sidebar={
                         <>
-                            <FocusCard
-                                items={[
-                                    {
-                                        id: "1",
-                                        title:
-                                            "Finish Organon",
-                                        completed: false,
-                                    },
-                                    {
-                                        id: "2",
-                                        title:
-                                            "Reply to email",
-                                        completed: true,
-                                    },
-                                    {
-                                        id: "3",
-                                        title:
-                                            "Buy groceries",
-                                        completed: false,
-                                    },
-                                ]}
-                            />
+                            <FocusCard/>
 
                             <NotesCard />
                         </>

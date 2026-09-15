@@ -5,12 +5,16 @@ import {
   ArrowLeft,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
   Home,
   Calendar,
   Clock,
   Settings,
   Droplet,
   MoreHorizontal,
+  AlertCircle,
+  Repeat,
 } from "lucide-react";
 import styles from "./Icon.module.css";
 
@@ -20,6 +24,8 @@ type IconName =
   | "back"
   | "chevron-left"
   | "chevron-right"
+  | "chevron-down"
+  | "chevron-up"
   | "home"
   | "calendar"
   | "clock"
@@ -29,6 +35,8 @@ type IconName =
   | "projects"
   | "goals"
   | "routines"
+  | "alert-circle"
+  | "repeat"
   | "logout"
   | "more";
 
@@ -157,6 +165,10 @@ const lucideIcons = {
   back: ArrowLeft,
   "chevron-left": ChevronLeft,
   "chevron-right": ChevronRight,
+  "chevron-down": ChevronDown,
+  "chevron-up": ChevronUp,
+  "alert-circle": AlertCircle,
+  "repeat": Repeat,
   home: Home,
   calendar: Calendar,
   clock: Clock,

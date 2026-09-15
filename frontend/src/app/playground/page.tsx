@@ -8,6 +8,8 @@ import FocusCard from "../../components/planner/FocusCard";
 import NotesCard from "../../components/planner/NotesCard";
 import TimelineColumn from "../../components/planner/Timeline/TimelineColumn";
 import OccurrenceCard from "../../components/planner/Timeline/OccurrenceCard";
+import AddTaskContainer from "../../components/addtask/AddTaskContainer";
+import TaskForm from "../../components/addtask/TaskForm";
 
 export default function PlaygroundPage() {
 
@@ -131,6 +133,30 @@ export default function PlaygroundPage() {
                       description="5,000 steps"
                       completed
                   />
+
+                  <section className={styles.section}>
+                      <h2>Add Task Container</h2>
+
+                      <AddTaskContainer
+                          onBack={() => console.log("Back")}
+                          onAddTask={() => console.log("Add Task")}
+                      >
+                          <div className={styles.empty}>
+                              Add Task content will appear here.
+                          </div>
+                      </AddTaskContainer>
+                  </section>
+
+                  <section className={styles.section}>
+                      <h2>Add Task Container</h2>
+
+                      <AddTaskContainer
+                          onBack={() => console.log("Back")}
+                          onAddTask={() => console.log("Create Task")}
+                      >
+                          <TaskForm />
+                      </AddTaskContainer>
+                  </section>
         </div>
         
       </section>

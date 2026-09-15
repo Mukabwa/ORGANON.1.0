@@ -1,0 +1,25 @@
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.content {
+    flex: 1;
+    min-height: 8rem;
+    padding: var(--spacing-tight) 0;
+}
+
+.actionArea {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-comfortable) 0 0;
+    border-top: 1px solid rgb(var(--mist-rgb) / 0.15);
+}
+
+.addTaskButton {
+    min-height: var(--control-compact);
+    padding: 0 var(--spacing-tight);
+    font-size: var(--text-small);
+}

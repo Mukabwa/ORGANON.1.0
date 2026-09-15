@@ -1,0 +1,91 @@
+.picker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    min-height: var(--control-standard);
+    overflow: hidden;
+    border: none;
+    border-radius: var(--radius-pill);
+    background:
+        linear-gradient(to bottom,
+            var(--gradient-card-paper));
+    box-shadow: var(--shadow-soft);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.wheel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0;
+    min-width: 0;
+    color: var(--text-secondary);
+    gap: 0.125rem;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 0.625rem;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--mist);
+    cursor: pointer;
+}
+
+.arrow:hover {
+    color: var(--ink);
+    background: rgb(var(--blush-rgb) / 0.1);
+}
+
+.arrow:focus-visible {
+    outline: 2px solid rgb(var(--purple-rgb) / 0.62);
+    outline-offset: -2px;
+}
+
+.value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+    font-size: var(--text-caption);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 0.15rem;
+    color: var(--mist);
+    font-size: var(--text-caption);
+    font-weight: 500;
+}
+
+.selectedTime {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+    margin-top: var(--spacing-tight);
+    color: var(--text-secondary);
+    font-size: var(--text-caption);
+}
+
+.selectedTime strong {
+    color: var(--ink);
+    font-weight: 500;
+}

@@ -53,30 +53,42 @@ export default function FocusCard({
                 </div>
             </div>
 
-            <ul className={styles.list}>
-                {items.map((item) => (
-                    <li
-                        key={item.id}
-                        className={[
-                            styles.item,
-                            item.completed
-                                ? styles.completed
-                                : "",
-                        ].join(" ")}
-                    >
-                        <span
-                            className={styles.indicator}
-                            aria-hidden="true"
-                        >
-                            {item.completed ? "✓" : ""}
-                        </span>
+            {items.length === 0 ? (
+                <div className={styles.empty}>
+                    <p className={styles.emptyTitle}>
+                        Nothing competing for your attention.
+                    </p>
 
-                        <span className={styles.itemTitle}>
-                            {item.title}
-                        </span>
-                    </li>
-                ))}
-            </ul>
+                    <p className={styles.emptyText}>
+                        Your priorities will appear here.
+                    </p>
+                </div>
+            ) : (
+                <ul className={styles.list}>
+                    {items.map((item) => (
+                        <li
+                            key={item.id}
+                            className={[
+                                styles.item,
+                                item.completed
+                                    ? styles.completed
+                                    : "",
+                            ].join(" ")}
+                        >
+                            <span
+                                className={styles.indicator}
+                                aria-hidden="true"
+                            >
+                                {item.completed ? " " : ""} ✓
+                            </span>
+
+                            <span className={styles.itemTitle}>
+                                {item.title}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+            )}
         </Card>
     );
 }

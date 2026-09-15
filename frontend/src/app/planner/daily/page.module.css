@@ -38,24 +38,19 @@
 .timelineCard {
     display: flex;
     flex-direction: column;
-
     width: 100%;
     min-width: 0;
     min-height: 0;
-
-    height: 100%;
+    max-height: 42rem;
     padding: 0;
-
     overflow: hidden;
 }
 
 .timelineScroll {
-    flex: 1;
-    min-height: 0;
-
+    min-height: 8rem;
+    max-height: 36rem;
     overflow-y: auto;
     overflow-x: hidden;
-
     padding: var(--spacing-comfortable);
 
     scrollbar-width: thin;

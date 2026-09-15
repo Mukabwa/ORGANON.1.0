@@ -1,0 +1,147 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-comfortable);
+    width: 100%;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+}
+
+.field label {
+    color: var(--ink);
+    font-size: var(--text-small);
+    font-weight: 500;
+}
+
+/* Title + Description */
+
+.textField {
+    align-items: stretch;
+    gap: var(--spacing-small);
+}
+
+.textField label {
+    text-align: left;
+    padding-inline: .5rem;
+    padding-bottom: .5rem;
+}
+
+.textField label span {
+    color: var(--mist);
+}
+
+.descriptionField {
+    position: relative;
+    width: 100%;
+    min-height: 2rem;
+    padding: var(--spacing-comfortable);
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+    border-radius: var(--radius-soft);
+    background: linear-gradient(to bottom,
+            var(--gradient-card-paper));
+    box-shadow: var(--shadow-soft);
+}
+
+.textField textarea {
+    display: block;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    font: inherit;
+    font-size: var(--text-regular);
+    line-height: 1.5;
+    resize: none;
+    overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgb(var(--mist-rgb) / 0.45) transparent;
+}
+
+.textField textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+.textField textarea:focus {
+    outline: none;
+}
+
+.characterCount {
+    position: absolute;
+    right: var(--spacing-comfortable);
+    bottom: var(--spacing-small);
+    color: var(--text-secondary);
+    font-size: var(--text-tiny);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.textField textarea::-webkit-scrollbar {
+    width: 0.35rem;
+}
+
+.textField textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.textField textarea::-webkit-scrollbar-thumb {
+    border-radius: var(--radius-pill);
+    background: rgb(var(--mist-rgb) / 0.45);
+}
+
+.textField textarea::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--ink-rgb) / 0.55);
+}
+
+.dateTimeRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-comfortable);
+    width: 100%;
+}
+
+.dateTimeRow .field {
+    min-width: 0;
+}
+
+.dateTimeRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-comfortable);
+    width: 100%;
+}
+
+.dateTimeRow .field {
+    min-width: 0;
+    
+}
+
+.dateTimeConfirmation {
+    margin: calc(var(--spacing-small) * -0.25) 0 0;
+    padding-inline: var(--spacing-comfortable);
+    color: var(--text-secondary);
+    font-size: var(--text-caption);
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 25rem;
+}
+
+.dateTimeRow .field label {
+    text-align: left;
+    padding-inline: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.field label {
+    text-align: left;
+    padding-inline: 0.5rem;
+    padding-bottom: 0.5rem;
+}
