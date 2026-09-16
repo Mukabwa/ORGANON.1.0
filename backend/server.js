@@ -1,11 +1,18 @@
 require("dotenv").config();
 
 const express = require("express");
+
 const cors = require("cors");
 
 const connectDB = require("./config/db");
 
 const authRoutes = require("./routes/authRoutes");
+
+const definitionRoutes =
+    require("./routes/definitionRoutes");
+
+const timelineRoutes =
+    require("./routes/timelineRoutes");
 
 const app = express();
 
@@ -36,9 +43,21 @@ app.use(
     authRoutes
 );
 
+app.use(
+    "/api/definitions",
+    definitionRoutes
+);
+
+app.use(
+    "/api/timeline",
+    timelineRoutes
+);
+
 // ==========================================================
 // HEALTH CHECK
 // ==========================================================
+
+console.log("Registering health check...");
 
 app.get(
     "/",

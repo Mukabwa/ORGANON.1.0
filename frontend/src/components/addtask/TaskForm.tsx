@@ -1,3 +1,4 @@
+// src/components/addtask/TaskForm.tsx
 "use client";
 
 import { useState } from "react";
@@ -15,6 +16,19 @@ import RecurrenceSelector, {
 import styles from "../../styles/components/addtask/TaskForm.module.css";
 
 type Priority = "low" | "medium" | "high";
+
+export interface TaskFormData {
+    title: string;
+    description: string;
+    date: string;
+    time: string;
+    priority: Priority;
+    recurrence: RecurrenceValue;
+}
+
+interface TaskFormProps {
+    onSubmit?: (task: TaskFormData) => void;
+}
 
 function getOrdinal(day: number) {
     if (day >= 11 && day <= 13) {
@@ -88,7 +102,9 @@ function formatTaskDate(date: string) {
     return `${getOrdinal(day)} ${monthName}, ${year}`;
 }
 
-export default function TaskForm() {
+export default function TaskForm({
+    onSubmit,
+}: TaskFormProps) {
     const [title, setTitle] = useState("");
 
     const [description, setDescription] = useState("");
@@ -123,8 +139,26 @@ export default function TaskForm() {
             )} (${time}).`
             : "";
 
+    function handleSubmit(
+        event: React.FormEvent<HTMLFormElement>
+    ) {
+        event.preventDefault();
+
+        onSubmit?.({
+            title,
+            description,
+            date,
+            time,
+            priority,
+            recurrence,
+        });
+    }
+
     return (
-        <form className={styles.form}>
+        <form
+            className={styles.form}
+            onSubmit={handleSubmit}
+        >
             <div
                 className={`${styles.field} ${styles.textField}`}
             >

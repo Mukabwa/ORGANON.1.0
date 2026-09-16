@@ -83,3 +83,65 @@
     border-top:
         1px solid rgb(var(--mist-rgb) / 0.15);
 }
+
+/* ==========================================================
+   ADD TASK OVERLAY
+   ========================================================== */
+
+.addTaskOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--spacing-relaxed);
+    box-sizing: border-box;
+
+    background: rgb(var(--canvas-rgb) / 0.28);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    overflow-y: auto;
+}
+
+.addTaskDialog {
+    width: min(100%, 25rem);
+    max-height: calc(100vh - 2 * var(--spacing-relaxed));
+    max-height: calc(100dvh - 2 * var(--spacing-relaxed));
+
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        rgb(var(--mist-rgb) / 0.45) transparent;
+}
+
+.addTaskDialog::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+.addTaskDialog::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.addTaskDialog::-webkit-scrollbar-thumb {
+    border-radius: var(--radius-pill);
+    background:
+        rgb(var(--mist-rgb) / 0.45);
+}
+
+@media (max-width: 640px) {
+    .addTaskOverlay {
+        align-items: flex-start;
+        padding: var(--spacing-comfortable);
+    }
+
+    .addTaskDialog {
+        max-height:
+            calc(100dvh - 2 * var(--spacing-comfortable));
+    }
+}
